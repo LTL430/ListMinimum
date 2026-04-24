@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -14,33 +15,19 @@ public class Main {
 			list.add(sc.nextInt());
 		}
 		
-		for (int i=0;i<size;i++) {
-			int min= getAndRemoveMin(list);
-			System.out.println(min);
+		
+			// sort list
+			
+		Collections.sort(list);
+		
+		// print list
+		
+		for (int val:list) {
+			System.out.println(val);
 		}
+		
 	}
 
-	private static int getAndRemoveMin(ArrayList<Integer> list) {
-		// TODO Auto-generated method stub
-		int min = Integer.MAX_VALUE;
-		int idx = 0;
-		
-		// find the minimum number;
-		for (int i=0;i<list.size();i++) {
-			int val = list.get(i);
-			if (val<min) {
-				min = val;
-				idx = i ;
-			}
-		}
-		
-		// remove the min number at index idx
-		list.remove(idx);
-		
-		
-		return min;
-		
-		
-	}
+	
 
 }
